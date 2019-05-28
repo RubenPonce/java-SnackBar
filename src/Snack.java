@@ -1,5 +1,5 @@
-
-public class Snack {
+import VendingMachine.java;
+public class Snack extends VendingMachine {
     // set fields
     // id
     // name
@@ -12,12 +12,15 @@ public class Snack {
     private double cost;
     private int vendingId;
 
-    public Snack(int id, String name, int quantity, double cost, int vendingId) {
+    public Snack(int vendingMachineId, String type,int id, String name, int quantity, double cost) {
+        super(vendingMachineId, type);
         this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
-        this.vendingId = vendingId;
+    }
+    public Snack (){
+        super();
     }
 
     /**
@@ -25,13 +28,6 @@ public class Snack {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
