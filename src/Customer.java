@@ -33,8 +33,8 @@ public class Customer {
     /**
      * @return the cash
      */
-    public double getCash() {
-        return cash;
+    public void getCash() {
+        System.out.println(this.name + " has $" + cash + " available");
     }
 
     /**
@@ -44,9 +44,11 @@ public class Customer {
         this.cash = cash;
     }
 
-    public void pay (double cost){
+    public void pay (double cost, String vendingItem){
         if(this.cash >= cost){
+            System.out.println(vendingItem + " costs $" + cost);
             this.cash-= cost;
+            System.out.println(this.name + " buys " + vendingItem +  " and has $" + this.cash + " left.");
         } else{
             System.out.println("you don't have enough money! $" + this.cash + " is your current balance and your purchase costs " + cost);
         }
